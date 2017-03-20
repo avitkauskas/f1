@@ -1,0 +1,6 @@
+{% for champ in champs %}
+    <a href="{% url 'champs:champ' champ.year %}">{{ champ.year }}</a>
+    {% if forloop.counter|divisibleby:"10" %} <br/> {% endif %}
+{% empty %}
+    No champs found.
+{% endfor %}
