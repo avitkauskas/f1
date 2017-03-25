@@ -5,8 +5,11 @@ from .models import Champ
 
 
 def index(request):
-    champs = Champ.objects.all()
-    context = {'champs': champs}
+    years = Champ.objects.values_list('year', flat=True).order_by('year')
+    rows = [[] for i in range(0, 10)]
+    for year in years:
+        rows[year % 10].append(year)
+    context = {'rows': rows, 'length': len(rows[0])}
     return render(request, 'champs/index.html', context)
 
 
