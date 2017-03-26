@@ -9,7 +9,7 @@ def index(request):
     rows = [[] for i in range(0, 10)]
     for year in years:
         rows[year % 10].append(year)
-    context = {'rows': rows, 'length': len(rows[0])}
+    context = {'rows': rows}
     return render(request, 'champs/index.html', context)
 
 

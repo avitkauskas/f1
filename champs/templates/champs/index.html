@@ -1,11 +1,23 @@
-<table>
-{% for row in rows %}
-    <tr>
-    {% for year in row %}
-        <td>
-            <a href="{% url 'champs:champ' year %}">{{ year }}</a>
-        </td>
+{% extends "champs/base.html" %}
+
+{% block title %}F1 info - All seasons{% endblock %}
+
+{% block content %}
+<div class="card-block">
+<table class="table table-bordered">
+    <tbody>
+    {% for row in rows %}
+        <tr>
+        {% for year in row %}
+            <td class="text-center">
+                <a href="{% url 'champs:champ' year %}">
+                    {{ year }}
+                </a>
+            </td>
+        {% endfor %}
+        </tr>
     {% endfor %}
-    </tr>
-{% endfor %}
+    </tbody>
 </table>
+</div>
+{% endblock %}

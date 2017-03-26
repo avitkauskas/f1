@@ -123,4 +123,8 @@ FIRST_DAY_OF_WEEK = 1
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 from .settings_local import *
