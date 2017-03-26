@@ -4,7 +4,14 @@
 
 {% block content %}
 <div class="card-block">
-<table class="table table-bordered">
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr class="thead-inverse table-sm">
+            <th colspan="{{ rows.0|length }}" class="text-center">
+                Championship Seasons
+            </th>
+        </tr>
+    </thead>
     <tbody>
     {% for row in rows %}
         <tr>

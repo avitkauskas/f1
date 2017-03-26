@@ -1,0 +1,56 @@
+{% extends "champs/base.html" %}
+
+{% block title %}F1 info - Season {{ year }}{% endblock %}
+
+{% block content %}
+<div class="card-block">
+<table class="table table-sm table-striped">
+    <thead class="thead-inverse">
+        <tr>
+            <th class="text-center">
+                No
+            </th>
+            <th>
+                GrandPrix Name
+            </th>
+            <th>
+                Circuit
+            </th>
+            <th class="text-center">
+                Date of Race
+            </th>
+            <th class="text-center">
+                Laps
+            </th>
+            <th class="text-center">
+                Circuit Length
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for gp in gps %}
+        <tr>
+            <td class="text-center">
+                {{ gp.sequence_no }}
+            </td>
+            <td class="text-nowrap">
+                {{ gp.gpname.name }}
+            </td>
+            <td class="text-nowrap">
+                {{ gp.circuit.name }}
+            </td>
+            <td class="text-nowrap text-center">
+                {{ gp.date_of_race|date:"Y-m-d" }}
+            </td>
+            <td class="text-center">
+                {{ gp.laps }}
+            </td>
+            <td class="text-center">
+                {{ gp.circuit_length }}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

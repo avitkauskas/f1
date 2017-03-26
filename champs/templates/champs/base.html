@@ -24,18 +24,30 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <a class="navbar-brand px-4" href="#">F1 Info</a>
+                    <a class="navbar-brand px-4"
+                            href="{% url 'champs:years' %}">
+                        F1 Info
+                    </a>
 
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item px-3">
-                                <a class="nav-link" href="#">Current Season</a>
+                                <a class="nav-link"
+                                        href="#">
+                                    Current Season
+                                </a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link" href="#">Historic Results</a>
+                                <a class="nav-link"
+                                        href="{% url 'champs:years' %}">
+                                    Historic Results
+                                </a>
                             </li>
                             <li class="nav-item px-3">
-                                <a class="nav-link" href="#">Statistics</a>
+                                <a class="nav-link"
+                                        href="#">
+                                    Statistics
+                                </a>
                             </li>
                         </ul>
                     </div>
